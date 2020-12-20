@@ -35,7 +35,7 @@ jobs:
             matrix:
                 node-version: [12.x]
         env:
-            OPEN_API_ACCESS_KEY: ${{secrets.OPEN_API_SECRET}}
+            OPEN_API_ACCESS_KEY: ${{secrets.OPEN_API_ACCESS_KEY}}
             SLACK_TOKEN: ${{secrets.SLACK_TOKEN}}
             SLACK_CHANNEL_ID: ${{secrets.SLACK_CHANNEL_ID}}
         steps:
