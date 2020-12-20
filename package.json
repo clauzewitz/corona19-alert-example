@@ -1,0 +1,27 @@
+{
+    "name": "corona19-alert-example",
+    "version": "1.0.0",
+    "description": "Notification of corona 19 confirmed cases using Github actions",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "babel-node src/index.js"
+    },
+    "babel": {
+        "presets": [
+            "@babel/env"
+        ]
+    },
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "axios": "^0.21.0",
+        "dayjs": "^1.9.7",
+        "http-status-codes": "^2.1.4",
+        "lodash": "^4.17.20",
+        "xml-js": "^1.6.11",
+        "@babel/core": "^7.12.10",
+        "@babel/node": "^7.12.10",
+        "@babel/preset-env": "^7.12.11"
+    }
+}
