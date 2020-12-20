@@ -23,22 +23,18 @@ const getCovid19State = async () => {
         const resultCode = response?.data?.response?.header?.resultCode ?? ResultCodes.UNKNOWN_ERROR;
         const itemArray = response?.data?.response?.body?.items?.item;
 
-        console.log(resultCode);
         if (isEqual(resultCode, ResultCodes.OK)) {
 
             if (isArray(itemArray) && !isEmpty(itemArray)) {
                 const todayCovidState = itemArray.shift();
                 const yesterDayCovidState = itemArray.pop();
-
-                let accDefRate = (todayCovidState?.accDefRate ?? 0);
-
+        
+                const accDefRate = (todayCovidState?.accDefRate ?? 0);
                 let todayDecideCnt = (todayCovidState?.decideCnt ?? 0) - (yesterDayCovidState?.decideCnt ?? 0);
                 todayDecideCnt = todayDecideCnt < 0 ? 0 : todayDecideCnt;
-
                 let todayDeathCnt = (todayCovidState?.deathCnt ?? 0) - (yesterDayCovidState?.deathCnt ?? 0);
                 todayDeathCnt = todayDeathCnt < 0 ? 0 : todayDeathCnt;
 
-                console.log(itemArray);
                 if (!isEmpty(SLACK_CHANNEL_ID)) {
                     const message = '🔔코로나19 확진자 현황';
                     const fields = [
@@ -60,7 +56,6 @@ const getCovid19State = async () => {
                         }
                     ];
 
-                    console.log(fields);
                     slack.sendPostMessage(SLACK_CHANNEL_ID, slack.makeSlackParams(message, fields, undefined));
                 }
             }
