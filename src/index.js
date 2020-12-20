@@ -37,6 +37,7 @@ const getCovid19State = async () => {
                 let todayDeathCnt = (todayCovidState?.deathCnt ?? 0) - (yesterDayCovidState?.deathCnt ?? 0);
                 todayDeathCnt = todayDeathCnt < 0 ? 0 : todayDeathCnt;
 
+                console.log(itemArray);
                 if (!isEmpty(SLACK_CHANNEL_ID)) {
                     const message = '🔔코로나19 확진자 현황';
                     const fields = [
@@ -58,6 +59,7 @@ const getCovid19State = async () => {
                         }
                     ];
 
+                    console.log(fields);
                     slack.sendPostMessage(SLACK_CHANNEL_ID, slack.makeSlackParams(message, fields, undefined));
                 }
             }
