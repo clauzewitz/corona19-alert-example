@@ -23,6 +23,7 @@ const getCovid19State = async () => {
         const resultCode = response?.data?.response?.header?.resultCode ?? ResultCodes.UNKNOWN_ERROR;
         const itemArray = response?.data?.response?.body?.items?.item;
 
+        console.log(resultCode);
         if (isEqual(resultCode, ResultCodes.OK)) {
 
             if (isArray(itemArray) && !isEmpty(itemArray)) {
