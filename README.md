@@ -1,5 +1,5 @@
-# corona19-alert-example
-Notification of corona 19 confirmed cases using Github actions
+# covid19-alert-example
+Notification of covid19 confirmed cases using Github actions
 
 # Document
 [공공데이터 포털 - 코로나19 현황](https://www.data.go.kr/data/15043376/openapi.do)  

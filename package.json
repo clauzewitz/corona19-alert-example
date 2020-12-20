@@ -1,7 +1,7 @@
 {
-    "name": "corona19-alert-example",
+    "name": "covid19-alert-example",
     "version": "1.0.0",
-    "description": "Notification of corona 19 confirmed cases using Github actions",
+    "description": "Notification of covid19 confirmed cases using Github actions",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
