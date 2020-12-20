@@ -7,7 +7,7 @@ Notification of corona 19 confirmed cases using Github actions
 
 # Github Action
 * 동작 조건
-    + `main` 브랜치에 *push* 될 때
+    + `master` 브랜치에 *push* 될 때
     + 매일 *오전 11시(KST 기준)*
 * 동작 환경
     + Ubuntu 16.04
@@ -24,7 +24,7 @@ name: Announcement of confirmed patients today
 on:
     push:
         branches:
-            - main
+            - master
     schedule:
         - cron: '0 2 * * *'
 
