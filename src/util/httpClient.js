@@ -6,7 +6,6 @@ const HttpClient = {
         try {
             return await axiosClient.get(url, config);
         } catch(error) {
-            console.log(error);
             throw new Error(getReasonPhrase(error.status));
         }
     },

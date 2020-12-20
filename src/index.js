@@ -8,11 +8,6 @@ import ResultCodes from './type/resultCodes';
 const ACCESS_KEY = process.env.OPEN_API_ACCESS_KEY;
 const SLACK_CHANNEL_ID = process.env.SLACK_CHANNEL_ID;
 
-console.log(process.env);
-console.log(ACCESS_KEY);
-console.log(SLACK_CHANNEL_ID);
-console.log(process.env.SLACK_TOKEN);
-
 slack.defaults.token = process.env.SLACK_TOKEN;
 
 const getCovid19State = async () => {
@@ -41,7 +36,7 @@ const getCovid19State = async () => {
 
                 let todayDeathCnt = (todayCovidState?.deathCnt ?? 0) - (yesterDayCovidState?.deathCnt ?? 0);
                 todayDeathCnt = todayDeathCnt < 0 ? 0 : todayDeathCnt;
-    
+
                 if (!isEmpty(SLACK_CHANNEL_ID)) {
                     const message = '🔔코로나19 확진자 현황';
                     const fields = [
@@ -65,12 +60,10 @@ const getCovid19State = async () => {
 
                     slack.sendPostMessage(SLACK_CHANNEL_ID, slack.makeSlackParams(message, fields, undefined));
                 }
-            } else {
-                console.log('none');
             }
         }
     } catch (error) {
-        console.log(error);
+        console.error(error);
     }
 };
 

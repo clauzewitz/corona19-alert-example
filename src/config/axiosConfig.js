@@ -18,10 +18,8 @@ axiosClient.interceptors.request.use((config) => {
 });
 
 axiosClient.interceptors.response.use((response) => {
-    console.log(response);
     return response;
 }, (error) => {
-    console.log(error);
     const errorResponse = error.response;
 
     if (isNil(errorResponse)) {

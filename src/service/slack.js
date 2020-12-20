@@ -22,6 +22,7 @@ const getHeaders = () => {
 
 const getChannelInfo = (channelId) => {
 	return new Promise((resolve, reject) => {
+
         if (!channelId) {
             reject();
         }
@@ -34,7 +35,9 @@ const getChannelInfo = (channelId) => {
 			headers: getHeaders(),
 			params: params
 		}).then(response => {
+
 			if (isEqual(response.status, HttpStatus.OK)) {
+
 				if (response.data.ok) {
 					resolve(response.data.channel);
 				} else {
@@ -51,6 +54,7 @@ const getChannelInfo = (channelId) => {
 
 const sendWebHookMessage = (channelId, params) => {
 	return new Promise((resolve, reject) => {
+
         if (!channelId) {
             reject();
         }
@@ -60,6 +64,7 @@ const sendWebHookMessage = (channelId, params) => {
 		axios.post(this.webhookURL, params, {
 			headers: getHeaders()
 		}).then(response => {
+
 			if (isEqual(response.status, HttpStatus.OK)) {
 				resolve();
 			} else {
@@ -72,9 +77,8 @@ const sendWebHookMessage = (channelId, params) => {
 }
 
 const sendPostMessage = (channelId, params) => {
-	console.log(getHeaders());
-	console.log(channelId, params);
 	return new Promise((resolve, reject) => {
+
 	    if (!channelId) {
 	        reject();
         }
@@ -84,14 +88,13 @@ const sendPostMessage = (channelId, params) => {
 		axios.post('/chat.postMessage', params, {
 			headers: getHeaders()
 		}).then(response => {
-			console.log(response);
+
 			if (isEqual(response.status, HttpStatus.OK)) {
 				resolve();
 			} else {
 				reject();
 			}
 		}).catch(error => {
-			console.log(error);
 			reject(error);
 		});
 	});
@@ -100,6 +103,7 @@ const sendPostMessage = (channelId, params) => {
 const makeSlackParams = (message, fields, actions) => {
     fields = fields || undefined;
     actions = actions || undefined;
+
     const DIVIDER = {
         type: 'divider',
         block_id: 'divider'
