@@ -6,7 +6,7 @@ name: Announcement of confirmed patients today
 on:
     push:
         branches:
-            - main
+            - master
     schedule:
         - cron: '0 2 18 * *'
 
