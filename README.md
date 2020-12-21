@@ -8,7 +8,9 @@ Notification of covid19 confirmed cases using Github actions
 # Github Action
 * 동작 조건
     + `master` 브랜치에 *push* 될 때
-    + 매일 *오전 11시(KST 기준)*
+    + 매일 *오전 9시(KST 기준)*
+        - Github Action 의 기준 시간은 UTC 임.
+        - 단, 정확한 시간에 동작한다는 보장은 없음. 대체로 설정한 시간의 15분 뒤에 실행됨을 확인
 * 동작 환경
     + Ubuntu 16.04
     + Node.js 12.x
@@ -56,3 +58,4 @@ jobs:
     + 공공데이터 포털에서 제공되는 serviceKey 는 기본적으로 URL encoding 이 되어있기 때문에 코드에서 사용하려면 URL decoding 후 사용하여야한다.
 * 공공데이터 API 호출 시 설정한 timeout 값을 확인한다.
     + 로컬환경에서 설정한 timeout 보다 길게 설정하여야한다.
+        - 최소 20초 이상 설정하는 것을 권장
