@@ -28,7 +28,7 @@ on:
         branches:
             - master
     schedule:
-        - cron: '0 2 * * *'
+        - cron: '0 0 * * *'
 
 jobs:
     start:
