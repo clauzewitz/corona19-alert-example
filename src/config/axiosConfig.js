@@ -4,7 +4,7 @@ import { StatusCodes } from 'http-status-codes';
 
 const axiosClient = axios.create({
     baseURL: 'http://openapi.data.go.kr/openapi/service/rest/Covid19',
-    timeout: 10000,
+    timeout: 20000,
     headers: {
         'Content-Type': 'text/xml'
     },
