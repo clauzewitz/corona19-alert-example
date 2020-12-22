@@ -5,6 +5,7 @@ import HttpStatus from 'http-status-codes';
 
 const axios = Axios.create({
 	baseURL: 'https://slack.com/api',
+	timeout: 20000,
 	withCredentials: true
 });
 
