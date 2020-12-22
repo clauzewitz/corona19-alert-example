@@ -44,15 +44,15 @@ const getCovid19State = async () => {
                         },
                         {
                             'type': 'mrkdwn',
-                            'text': `*확진자 수*\n${todayDecideCnt.toLocaleString()} 명`
+                            'text': `*확진자 수*\n${todayDecideCnt?.toLocaleString?.()} 명`
                         },
                         {
                             'type': 'mrkdwn',
-                            'text': `*누적 확진률*\n${accDefRate.toFixed(2)} %`
+                            'text': `*누적 확진률*\n${accDefRate?.toFixed?.(2)} %`
                         },
                         {
                             'type': 'mrkdwn',
-                            'text': `*사망자 수*\n${todayDeathCnt.toLocaleString()} 명`
+                            'text': `*사망자 수*\n${todayDeathCnt?.toLocaleString?.()} 명`
                         }
                     ];
 
