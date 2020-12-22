@@ -29,7 +29,7 @@ const getCovid19State = async () => {
                 const todayCovidState = itemArray.shift();
                 const yesterDayCovidState = itemArray.pop();
         
-                const accDefRate = (todayCovidState?.accDefRate ?? 0);
+                const accDefRate = Number(todayCovidState?.accDefRate ?? 0);
                 let todayDecideCnt = (todayCovidState?.decideCnt ?? 0) - (yesterDayCovidState?.decideCnt ?? 0);
                 todayDecideCnt = todayDecideCnt < 0 ? 0 : todayDecideCnt;
                 let todayDeathCnt = (todayCovidState?.deathCnt ?? 0) - (yesterDayCovidState?.deathCnt ?? 0);
