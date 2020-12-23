@@ -24,9 +24,9 @@ const getHeaders = () => {
 const getChannelInfo = (channelId) => {
 	return new Promise((resolve, reject) => {
 
-        if (!channelId) {
-            reject();
-        }
+		if (!channelId) {
+		    reject();
+		}
 
 		let params = {
 			channel: channelId
@@ -56,9 +56,9 @@ const getChannelInfo = (channelId) => {
 const sendWebHookMessage = (channelId, params) => {
 	return new Promise((resolve, reject) => {
 
-        if (!channelId) {
-            reject();
-        }
+		if (!channelId) {
+		    reject();
+		}
 
 		params.channel = channelId;
 
@@ -80,9 +80,9 @@ const sendWebHookMessage = (channelId, params) => {
 const sendPostMessage = (channelId, params) => {
 	return new Promise((resolve, reject) => {
 
-	    if (!channelId) {
-	        reject();
-        }
+		if (!channelId) {
+			reject();
+		}
 
 		params.channel = channelId;
 
@@ -93,9 +93,11 @@ const sendPostMessage = (channelId, params) => {
 			if (isEqual(response.status, HttpStatus.OK)) {
 				resolve();
 			} else {
+				console.log(response);
 				reject();
 			}
 		}).catch(error => {
+			console.log(error);
 			reject(error);
 		});
 	});
